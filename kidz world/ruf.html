@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidz World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            height: 50px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 30px;
+        }
+
+        .cart {
+            height: 30px;
+            width: 35px;
+        }
+
+        .add {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        h2 {
+            font-size: medium;
+        }
+
+        .hero {
+            width: 100%;
+            height: 350px;
+            background-image: url('kw-background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        .first-row,
+        .secondrow,
+        .thirdrow {
+            margin-top: 80px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .first-row p,
+        .secondrow p,
+        .thirdrow p {
+            font-size: medium;
+            font-family: serif;
+            font-weight: 900;
+        }
+
+        .first,
+        .second,
+        .third {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .bookcard {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+        }
+
+        .bookcard img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .bookcard h4,
+        .gamecard h4 {
+            margin-top: 5px;
+        }
+
+        .gamecard {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        .gamecard img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .aut {
+            margin-top: 8px;
+            opacity: 0.4;
+        }
+
+        .price {
+            font-size: medium;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+        .car,
+        .carm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 13px;
+            gap: 10px;
+        }
+
+        button {
+            background-color: rgb(91, 137, 235);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 55px;
+            height: 30px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* button img {
+            width: 15px;
+            height: 15px;
+        } */
+
+       
+
+        @media screen and (max-width: 768px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .hero {
+                height: 280px;
+                padding-left: 25px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .first-row,
+            .secondrow,
+            .thirdrow {
+                margin: 50px 20px 0;
+            }
+
+            .first,
+            .second,
+            .third {
+                justify-content: center;
+                gap: 25px;
+            }
+
+            .bookcard {
+                width: 150px;
+            }
+
+            .gamecard {
+                width: 200px;
+            }
+
+            .gamecard img {
+                height: 200px;
+            }
+        }
+
+        
+        @media screen and (max-width: 480px) {
+
+            header {
+                padding: 0 10px;
+                height: 45px;
+            }
+
+            .logo {
+                width: 110px;
+                height: auto;
+            }
+
+            .cart {
+                width: 25px;
+                height: 25px;
+            }
+
+            .add {
+                gap: 5px;
+            }
+
+            .add h2 {
+                font-size: 12px;
+            }
+
+            .hero {
+                height: 220px;
+                padding-left: 15px;
+                background-position: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+            }
+
+            .first-row,
+            .secondrow,
+            .thirdrow {
+                margin: 35px 12px 0;
+            }
+
+            .first,
+            .second,
+            .third {
+                justify-content: space-between;
+                gap: 25px 10px;
+                margin-top: 15px;
+            }
+
+            .bookcard,
+            .gamecard {
+                width: 47%;
+                height: auto;
+            }
+
+            .bookcard img {
+                width: 100%;
+                height: 160px;
+                object-fit: contain;
+            }
+
+            .gamecard img {
+                width: 100%;
+                height: 145px;
+                object-fit: contain;
+            }
+
+            .bookcard h4,
+            .gamecard h4 {
+                font-size: 13px;
+            }
+
+            .aut {
+                font-size: 10px;
+            }
+
+            .price {
+                font-size: 12px;
+            }
+
+            .car,
+            .carm {
+                gap: 4px;
+                padding-top: 8px;
+            }
+
+            button {
+                width: 43px;
+                height: 26px;
+                font-size: 11px;
+            }
+
+            button img {
+                width: 12px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html">
+            <img src="kw-logo.png" alt="Company Logo" class="logo">
+        </a>
+
+        <div class="add">
+            <img src="cart-icon.png" alt="Cart" class="cart">
+            <h2>Cart items (0)</h2>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Shop.<br>Have Fun.<br>Repeat.</h1>
+            <p>#NewAndNow</p>
+        </div>
+    </div>
+
+    <div class="middle">
+
+        <!-- Books -->
+        <div class="first-row">
+            <p>Discover New Books</p>
+
+            <div class="first">
+
+                <div class="bookcard">
+                    <img src="book1.png" alt="This was our pact">
+                    <h4>This was our pact</h4>
+                    <h6 class="aut">Ryan Andrews</h6>
+                    <div class="car">
+                        <h3 class="price">$ 7.49</h3>
+                        <button>Add 
+                            <img src="cart-icon-white.png" alt="" width="15px" height="1px"></button>
+                    </div>
+                </div>
+
+                <div class="bookcard">
+                    <img src="book2.png" alt="The famous five">
+                    <h4>The famous five</h4>
+                    <h6 class="aut">Guid Blyton</h6>
+                    <div class="car">
+                        <h3 class="price">$ 4.59</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="bookcard">
+                    <img src="book3.png" alt="Matilda">
+                    <h4>Matilda</h4>
+                    <h6 class="aut">Roald Dahl</h6>
+                    <div class="car">
+                        <h3 class="price">$ 6.80</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="bookcard">
+                    <img src="book4.png" alt="Harry Potter">
+                    <h4>Harry Potter</h4>
+                    <h6 class="aut">JK Rowling</h6>
+                    <div class="car">
+                        <h3 class="price">$ 10</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="bookcard">
+                    <img src="book5.png" alt="For Young Readers">
+                    <h4>For Young Readers</h4>
+                    <h6 class="aut">Ruskin Bond</h6>
+                    <div class="car">
+                        <h3 class="price">$ 7.29</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="bookcard">
+                    <img src="book6.png" alt="Wimpy Kid DIY">
+                    <h4>Wimpy Kid-DIY</h4>
+                    <h6 class="aut">Jeff Kinney</h6>
+                    <div class="car">
+                        <h3 class="price">$ 4.99</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Games -->
+        <div class="secondrow">
+            <p>Discover New Games</p>
+
+            <div class="second">
+
+                <div class="gamecard">
+                    <img src="dart-board.png" alt="Dart Board">
+                    <h4>Dart Board</h4>
+                    <h6 class="aut">Wooden board, 16 inches</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 17.49</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="connect-four.png" alt="Connect 4">
+                    <h4>Connect 4</h4>
+                    <h6 class="aut">Board game, multiplayer</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 19.99</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="jenga.png" alt="Jenga">
+                    <h4>Jenga</h4>
+                    <h6 class="aut">Wooden blocks, 54 pieces</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 20.99</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="monopoly.png" alt="Monopoly">
+                    <h4>Monopoly</h4>
+                    <h6 class="aut">1.61x15.75x10.51 inches</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 19.49</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Handmade products -->
+        <div class="thirdrow">
+            <p>Handmade with love</p>
+
+            <div class="third">
+
+                <div class="gamecard">
+                    <img src="bookmarks.png" alt="Bookmarks">
+                    <h4>Bookmarks</h4>
+                    <h6 class="aut">Handmade with love</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 12.49</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="birthday-card.png" alt="Birthday card">
+                    <h4>Birthday card</h4>
+                    <h6 class="aut">Handmade with love</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 19.99</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="stuffed-toy.png" alt="Stuffed toys">
+                    <h4>Stuffed toys</h4>
+                    <h6 class="aut">Handmade with love</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 15.99</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+                <div class="gamecard">
+                    <img src="dream-catcher.png" alt="Dream catcher drawing">
+                    <h4>Dream catcher drawing</h4>
+                    <h6 class="aut">Handmade with love</h6>
+                    <div class="carm">
+                        <h3 class="price">$ 18.49</h3>
+                        <button>Add <img src="cart-icon-white.png" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
